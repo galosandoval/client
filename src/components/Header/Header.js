@@ -1,7 +1,11 @@
 import React from "react";
 import "./Header.css";
 import { Avatar } from "@material-ui/core";
-import {AccessTime as AccessTimeIcon, HelpOutline as HelpOutlineIcon, Search as SearchIcon} from "@material-ui/icons";
+import {
+  AccessTime as AccessTimeIcon,
+  HelpOutline as HelpOutlineIcon,
+  Search as SearchIcon,
+} from "@material-ui/icons";
 const Header = () => {
   return (
     <div className="header">
