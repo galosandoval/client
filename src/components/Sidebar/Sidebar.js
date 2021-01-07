@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Add,
   Apps,
@@ -15,8 +15,21 @@ import {
 } from "@material-ui/icons";
 import SidebarOption from "../SidebarOption/SidebarOption";
 import "./Sidebar.css";
+import db from "../../firebase";
 
 const Sidebar = () => {
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    db.collection("channels").onSnapshot((snap) =>
+      setChannels(
+        snap.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().name,
+        }))
+      )
+    );
+  }, []);
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -41,8 +54,11 @@ const Sidebar = () => {
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
       <SidebarOption Icon={Add} title="Add channel" />
-    {/* Connect to dB and list all the channels */}
-    {/* Hella <SidebarOption> */}
+      {/* Connect to dB and list all the channels */}
+      {/* Hella <SidebarOption> */}
+      {channels.map((channel) => (
+        <SidebarOption title={channel.name} id={channel.id} key={channel.id} />
+      ))}
     </div>
   );
 };

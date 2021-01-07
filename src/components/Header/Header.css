@@ -23,6 +23,7 @@
   display: flex;
   padding: 0 50px;
   color: gray;
+  border: 1px gray solid;
   border-radius: 6px;
 }
 .header__search > input {
