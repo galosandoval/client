@@ -13,7 +13,7 @@ const Header = () => {
     <div className="header">
       <div className="header__left">
         {/* Avatars for logged in user */}
-        <Avatar className="header__avatar" alt={user?.displayName} src={user?.photoURL} />
+        <Avatar className="header__avatar" alt={user?.displayName } src={user?.photoURL} />
         {/* Time icon */}
         <AccessTimeIcon className="header__icon" />
       </div>
