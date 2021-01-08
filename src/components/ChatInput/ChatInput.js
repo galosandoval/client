@@ -15,8 +15,8 @@ const ChatInput = ({ channelName, channelId }) => {
       db.collection('channels').doc(channelId).collection('messages').add({
         message: input,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        user: user.displayName,
-        userImage: user.photoURL
+        user: user?.displayName,
+        userImage: user?.photoURL
       })
     }
   };
