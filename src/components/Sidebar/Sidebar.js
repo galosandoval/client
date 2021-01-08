@@ -53,7 +53,7 @@ const Sidebar = () => {
       <hr />
       <SidebarOption Icon={ExpandMore} title="Channels" />
       <hr />
-      <SidebarOption Icon={Add} title="Add channel" />
+      <SidebarOption Icon={Add} addChannelOption title="Add channel" />
       {/* Connect to dB and list all the channels */}
       {/* Hella <SidebarOption> */}
       {channels.map((channel) => (
