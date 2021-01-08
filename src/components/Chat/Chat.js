@@ -24,6 +24,7 @@ const Chat = () => {
       .orderBy("timestamp", "asc")
       .onSnapshot((snap) => {
         setRoomMessages(snap.docs.map((doc) => doc.data()));
+        console.log(roomMessages)
       });
   }, [channelId]);
 
@@ -44,13 +45,13 @@ const Chat = () => {
         </div>
       </div>
       <div className="chat__messages">
-        {roomMessages.map(({ message, timestamp, user, userImg }) => (
+        {roomMessages.map(({ message, timestamp, user, userImage }) => (
           <Message
             message={message}
             timestamp={timestamp}
             user={user}
-            userImg={userImg}
-            key={message}
+            userImage={userImage}
+            key={(timestamp + user)}
           />
         ))}
       </div>

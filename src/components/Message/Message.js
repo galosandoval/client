@@ -1,10 +1,11 @@
 import React from "react";
 import "./Message.css";
 
-const Message = ({ message, timestamp, user, userImg }) => {
+const Message = ({ message, timestamp, user, userImage }) => {
+  console.log(userImage)
   return (
     <div className="message">
-      <img src={userImg} alt="" />
+      <img src={userImage} alt="users profile image" />
       <div className="message__info">
         <h4>
           {user}{" "}
